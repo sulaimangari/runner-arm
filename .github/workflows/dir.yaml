@@ -1,4 +1,4 @@
-name: Directory test
+name: Spec test
 on:
   push:
     branches:
