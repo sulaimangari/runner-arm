@@ -13,6 +13,9 @@ jobs:
         run: 'df -h --total'
       - name: spec list with fastfetch
         run: |
-          sudo apt install ppa:zhangsongcui3371/fastfetch
-          fastfetch
+          sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+          sudo apt update
+          sudo apt install fastfetch
+      - name: fastfetch
+        run: 'fastfetch'
 
