@@ -11,11 +11,22 @@ jobs:
     steps:
       - name: run test directory
         run: 'df -h --total'
+
       - name: spec list with fastfetch
         run: |
           sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
           sudo apt update
           sudo apt install fastfetch
+
       - name: fastfetch
         run: 'fastfetch'
 
+      - name: check dmidecode
+        run: 'sudo dmidecode >> dmicheck.txt'
+
+      - name: Upload dmi artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dmi artifact
+          path: |
+            dmicheck.txt
