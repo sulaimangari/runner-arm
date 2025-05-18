@@ -13,7 +13,6 @@ jobs:
         run: 'df -h --total'
       - name: spec list with fastfetch
         run: |
-          curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
-          deb-get install fastfetch
+          sudo apt install ppa:zhangsongcui3371/fastfetch
           fastfetch
 
