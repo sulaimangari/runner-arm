@@ -1,0 +1,44 @@
+name: CI
+on: [push]
+
+jobs:
+  dir:
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      # - name: run test directory
+      #   run: 'df -h --total'
+      #
+      # - name: spec list with fastfetch
+      #   run: |
+      #     sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+      #     sudo apt update
+      #     sudo apt install fastfetch
+      #
+      # - name: fastfetch
+      #   run: 'fastfetch'
+      #
+      # - name: check dmidecode
+      #   run: 'sudo dmidecode >> dmicheck.txt'
+      #
+      # - name: check dmesg
+      #   run: 'sudo dmesg >> dmesg.txt'
+      #
+      # - name: Upload dmi artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: dmi artifact
+      #     path: |
+      #       dmicheck.txt
+      #
+      # - name: Upload dmesg artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: dmesg artifact
+      #     path: |
+      #       dmesg.txt
+
+
